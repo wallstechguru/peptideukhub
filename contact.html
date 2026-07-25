@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Support | Peptides UK Hub</title>
+  <meta name="description" content="Send a support request for an order, delivery, payment, account, affiliate, or research-use-only catalog question. UK-based support team responds within 24 business hours.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ============================================
+       CONTACT PAGE — PEPTIDES UK HUB
+       ============================================ */
+
+    /* ── Contact Hero Card ── */
+    .contact-hero {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 52px 56px;
+      max-width: 1380px;
+      margin: 32px auto 0 auto;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      position: relative;
+    }
+
+    .contact-hero-tag {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-teal-green);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .contact-hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.06;
+      color: #0f172a;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-hero-desc {
+      font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+      color: #475569;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 2.4rem;
+    }
+
+    .contact-hero-stats {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-stat {
+      display: flex;
+      flex-direction: column;
+      padding-right: 3rem;
+      margin-right: 3rem;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .contact-stat:last-child {
+      border-right: none;
+      padding-right: 0;
+      margin-right: 0;
+    }
+
+    .contact-stat-label {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .contact-stat-value {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    /* ── Support Topic Cards ── */
+    .contact-topics-section {
+      max-width: 1380px;
+      margin: 64px auto 0;
+      padding: 0 24px;
+    }
+
+    .contact-topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .contact-topic-card {
+      background-color: #0f1219;
+      border: 1px solid #1e2638;
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-topic-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-teal-green), var(--color-electric-blue));
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-topic-card:hover {
+      border-color: rgba(20, 184, 166, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .contact-topic-card:hover::before {
+      opacity: 1;
+    }
+
+    .topic-number {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--color-teal-green);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .topic-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background-color: rgba(20, 184, 166, 0.1);
+      border: 1px solid rgba(20, 184, 166, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+
+    .topic-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .topic-body {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      line-height: 1.65;
+    }
+
+    /* ── Main Contact Layout ── */
+    .contact-main {
+      max-width: 1380px;
+      margin: 64px auto 0;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Contact Form Card */
+    .contact-form-card {
+      background-color: #0f1219;
+      border: 1px solid #1e2638;
+      border-radius: 16px;
+      padding: 40px;
+      position: relative;
+    }
+
+    .contact-form-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--color-teal-green), var(--color-electric-blue));
+      border-radius: 16px 16px 0 0;
+    }
+
+    .contact-form-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .contact-form-desc {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      background-color: #080b12;
+      border: 1px solid #1e2638;
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      width: 100%;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #374151;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-teal-green);
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+    }
+
+    .form-select {
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+    }
+
+    .form-select option {
+      background-color: #0f1219;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .form-submit-btn {
+      background-color: var(--color-teal-green);
+      color: #ffffff;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 16px 32px;
+      border-radius: 8px;
+      border: 2px solid var(--color-teal-green);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.25);
+    }
+
+    .form-submit-btn:hover {
+      background-color: var(--color-electric-blue);
+      border-color: var(--color-electric-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
+    }
+
+    /* Contact Info Sidebar */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-info-card {
+      background-color: #0f1219;
+      border: 1px solid #1e2638;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .contact-info-title {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .contact-info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-info-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background-color: rgba(20, 184, 166, 0.1);
+      border: 1px solid rgba(20, 184, 166, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-info-label {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .contact-info-value {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+
+    /* Hours card */
+    .hours-card {
+      background: linear-gradient(135deg, #121622 0%, #0f1219 100%);
+      border: 1px solid #1e2638;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #1a2030;
+      font-size: 0.85rem;
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .hours-day {
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .hours-time {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 0.82rem;
+    }
+
+    .hours-time.closed {
+      color: #475569;
+    }
+
+    /* Success / confirmation message */
+    .form-success {
+      display: none;
+      background-color: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 16px;
+      color: #10b981;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* ── Bottom CTA Strip ── */
+    .contact-bottom-strip {
+      background: linear-gradient(135deg, #0b0e17 0%, #0d1017 100%);
+      border-top: 1px solid #1a2030;
+      padding: 70px 24px;
+      margin-top: 90px;
+    }
+
+    .contact-bottom-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .bottom-info-item {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .bottom-info-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background-color: rgba(20, 184, 166, 0.1);
+      border: 1px solid rgba(20, 184, 166, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .bottom-info-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .bottom-info-body {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .contact-hero {
+        margin: 16px;
+        padding: 40px 28px;
+      }
+      .contact-topics-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .contact-main {
+        grid-template-columns: 1fr;
+      }
+      .contact-bottom-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .contact-hero-stats {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .contact-stat {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        padding-right: 0;
+        margin-right: 0;
+        padding-bottom: 1rem;
+      }
+      .contact-stat:last-child { border-bottom: none; padding-bottom: 0; }
+      .contact-topics-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT TICKER BAR -->
+  <div class="announcement-bar">
+    <div class="ticker-wrapper">
+      <div class="ticker-content">
+        <div class="ticker-item">SECURE ACCOUNT CHECKOUT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">FREE PRIORITY SHIPPING £299.99+ GBP <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">MOST UK ORDERS UNDER 7 DAYS AFTER PROCESSING <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">DISCREET UK-WIDE FULFILLMENT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">100% UK RESEARCH COMPLIANT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">SECURE ACCOUNT CHECKOUT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">FREE PRIORITY SHIPPING £299.99+ GBP <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">MOST UK ORDERS UNDER 7 DAYS AFTER PROCESSING <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">DISCREET UK-WIDE FULFILLMENT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">100% UK RESEARCH COMPLIANT <span class="ticker-dot">•</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon-badge">PU</div>
+        <div class="logo-text-group">
+          <span class="brand-name">PEPTIDES</span>
+          <span class="brand-name" style="color: #ffffff;">UK HUB</span>
+          <span class="brand-subtext">RESEARCH &amp; INNOVATION</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="products.html" class="nav-link">SHOP</a>
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="quality.html" class="nav-link">QUALITY</a>
+        <a href="blog.html" class="nav-link">BLOG</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link active">CONTACT</a>
+      </nav>
+
+      <div class="header-actions">
+        <form class="header-search-form" onsubmit="event.preventDefault();">
+          <input type="text" id="header-search" class="search-input" placeholder="Search site..." aria-label="Search site">
+          <button type="submit" class="search-btn" title="Search"><span class="boxed-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span></button>
+        </form>
+        <button class="action-icon-btn boxed-action" title="User Account" onclick="alert('Account Login Drawer opened');">
+          <span class="boxed-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        </button>
+        <button class="action-icon-btn boxed-action" id="cart-icon-trigger" title="Shopping Cart">
+          <span class="boxed-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+          <span class="cart-badge">0</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Mobile Menu">
+          <span class="boxed-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 3. CONTACT HERO -->
+  <div style="padding: 0 24px;">
+    <div class="contact-hero">
+      <span class="contact-hero-tag">UK-Based Support</span>
+      <h1 class="contact-hero-title">How can we help?</h1>
+      <p class="contact-hero-desc">
+        Send a support request for an order, delivery, payment, account, affiliate, or research-use-only catalog question. Clear details help the team respond faster.
+      </p>
+      <div class="contact-hero-stats">
+        <div class="contact-stat">
+          <span class="contact-stat-label">Response target</span>
+          <span class="contact-stat-value">Within 24 Business Hours</span>
+        </div>
+        <div class="contact-stat">
+          <span class="contact-stat-label">Order help</span>
+          <span class="contact-stat-value">Include Order Number</span>
+        </div>
+        <div class="contact-stat">
+          <span class="contact-stat-label">Support</span>
+          <span class="contact-stat-value">UK-Based (Glasgow Hub)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SUPPORT TOPIC CARDS -->
+  <div class="contact-topics-section">
+    <div class="contact-topics-grid">
+
+      <div class="contact-topic-card">
+        <span class="topic-number">01</span>
+        <div class="topic-icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <h3 class="topic-title">Order Support</h3>
+        <p class="topic-body">Order confirmation, payment review, changes, or tracking questions. Include your order number for fastest resolution.</p>
+      </div>
+
+      <div class="contact-topic-card">
+        <span class="topic-number">02</span>
+        <div class="topic-icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-1"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3 class="topic-title">Shipping</h3>
+        <p class="topic-body">UK-wide delivery timing, address questions, or courier updates. All orders ship via domestic UK tracked dispatch.</p>
+      </div>
+
+      <div class="contact-topic-card">
+        <span class="topic-number">03</span>
+        <div class="topic-icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3 class="topic-title">Affiliates &amp; Partners</h3>
+        <p class="topic-body">Partnership, referral-link, commission, or account questions. Include your affiliate ID if registered.</p>
+      </div>
+
+      <div class="contact-topic-card">
+        <span class="topic-number">04</span>
+        <div class="topic-icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <h3 class="topic-title">Payments &amp; Billing</h3>
+        <p class="topic-body">Payment confirmation, invoice requests, or billing discrepancies. All transactions are processed in GBP (£).</p>
+      </div>
+
+      <div class="contact-topic-card">
+        <span class="topic-number">05</span>
+        <div class="topic-icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg></div>
+        <h3 class="topic-title">Product &amp; Catalog</h3>
+        <p class="topic-body">Questions about product identity, purity documentation, COA requests, or research-use compliance guidance.</p>
+      </div>
+
+      <div class="contact-topic-card">
+        <span class="topic-number">06</span>
+        <div class="topic-icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3 class="topic-title">Account &amp; Privacy</h3>
+        <p class="topic-body">Account access issues, password resets, data requests, or account deletion under UK GDPR privacy compliance.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5. CONTACT FORM + SIDEBAR -->
+  <div class="contact-main">
+
+    <!-- Contact Form -->
+    <div class="contact-form-card">
+      <h2 class="contact-form-title">Send a Support Request</h2>
+      <p class="contact-form-desc">Fields marked * are required. Response within 24 business hours.</p>
+
+      <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="contact-first">First Name *</label>
+            <input type="text" id="contact-first" class="form-input" placeholder="First name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-last">Last Name *</label>
+            <input type="text" id="contact-last" class="form-input" placeholder="Last name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-email">Email Address *</label>
+          <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-order">Order Number (if applicable)</label>
+          <input type="text" id="contact-order" class="form-input" placeholder="e.g. PUK-2026-00123">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-topic">Support Topic *</label>
+          <select id="contact-topic" class="form-select" required>
+            <option value="" disabled selected>Select a topic…</option>
+            <option value="order">Order Support</option>
+            <option value="shipping">Shipping &amp; Delivery</option>
+            <option value="payment">Payments &amp; Billing</option>
+            <option value="product">Product &amp; Catalog</option>
+            <option value="affiliate">Affiliates &amp; Partners</option>
+            <option value="account">Account &amp; Privacy</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-message">Message *</label>
+          <textarea id="contact-message" class="form-textarea" placeholder="Describe your question or issue in detail. For order issues, include your order number and the email used at checkout." required></textarea>
+        </div>
+
+        <p class="form-note">By submitting this form, you confirm that your inquiry is related to research-use-only products and that you meet the age requirements under UK regulations.</p>
+
+        <button type="submit" class="form-submit-btn" id="submit-btn">
+          <span class="boxed-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span>
+          Send Support Request
+        </button>
+
+        <div class="form-success" id="form-success">
+          ✅ Request received! We'll respond to your email within 24 business hours.
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Sidebar Info -->
+    <div class="contact-sidebar">
+
+      <div class="contact-info-card">
+        <div class="contact-info-title">Direct Contact & Address</div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Email Support</span>
+            <span class="contact-info-value">support@peptidesukhub.co.uk</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Phone Support</span>
+            <span class="contact-info-value">+44 7378 768689</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Physical Address</span>
+            <span class="contact-info-value">81 Nith Street<br>GLASGOW, G1 0EJ<br>United Kingdom</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="contact-info-text">
+            <span class="contact-info-label">Response Target</span>
+            <span class="contact-info-value">Within 24 business hours<br>Mon – Fri</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hours-card">
+        <div class="contact-info-title">Support Hours (GMT / BST)</div>
+        <div class="hours-row">
+          <span class="hours-day">Monday</span>
+          <span class="hours-time">9:00 AM – 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Tuesday</span>
+          <span class="hours-time">9:00 AM – 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Wednesday</span>
+          <span class="hours-time">9:00 AM – 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Thursday</span>
+          <span class="hours-time">9:00 AM – 5:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Friday</span>
+          <span class="hours-time">9:00 AM – 4:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Saturday</span>
+          <span class="hours-time closed">Closed</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">Sunday</span>
+          <span class="hours-time closed">Closed</span>
+        </div>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="contact-info-title">Quick Links</div>
+        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+          <a href="faq.html" style="display:flex; align-items:center; gap:10px; color:#94a3b8; text-decoration:none; font-size:0.88rem; padding:8px 0; border-bottom:1px solid #1a2030; transition:color 0.2s;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.18);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            View FAQ
+          </a>
+          <a href="quality.html" style="display:flex; align-items:center; gap:10px; color:#94a3b8; text-decoration:none; font-size:0.88rem; padding:8px 0; border-bottom:1px solid #1a2030; transition:color 0.2s;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.18);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/></svg></span>
+            Quality &amp; Testing
+          </a>
+          <a href="products.html" style="display:flex; align-items:center; gap:10px; color:#94a3b8; text-decoration:none; font-size:0.88rem; padding:8px 0; transition:color 0.2s;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:rgba(20,184,166,0.08);border:1px solid rgba(20,184,166,0.18);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+            Shop Catalog
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 6. BOTTOM INFO STRIP -->
+  <section class="contact-bottom-strip">
+    <div class="contact-bottom-inner">
+      <div class="bottom-info-item">
+        <div class="bottom-info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3 class="bottom-info-title">Secure &amp; Private</h3>
+        <p class="bottom-info-body">All messages are encrypted and handled in compliance with UK GDPR privacy standards.</p>
+      </div>
+      <div class="bottom-info-item">
+        <div class="bottom-info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3 class="bottom-info-title">Fast Response</h3>
+        <p class="bottom-info-body">UK-based support team responds within 24 business hours Monday to Friday.</p>
+      </div>
+      <div class="bottom-info-item">
+        <div class="bottom-info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3 class="bottom-info-title">UK Support</h3>
+        <p class="bottom-info-body">Our team understands UK research regulations, shipping, and fulfillment requirements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. DISCLAIMER & FOOTER -->
+  <footer class="main-footer">
+    <div class="disclaimer-banner">
+      <strong>RESEARCH COMPLIANCE NOTICE:</strong> The products sold on Peptides UK Hub are furnished strictly for in-vitro research and laboratory experimentation. They are not intended for diagnostic procedures, medical treatment, or human consumption. Buying customer certifies age of majority.
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon-badge">PU</div>
+          <div class="logo-text-group">
+            <span class="brand-name">PEPTIDES</span>
+            <span class="brand-name" style="color: #ffffff;">UK HUB</span>
+          </div>
+        </a>
+        <p>The UK's premier supplier of high-purity laboratory research peptides, synthetic fragments, and analytical reagents. Domestic fulfillment.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop Catalog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="quality.html">HPLC Purity</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Research Categories</h4>
+        <ul class="footer-links">
+          <li><a href="products.html#shop">Healing &amp; Recovery</a></li>
+          <li><a href="products.html#shop">Metabolic Research</a></li>
+          <li><a href="products.html#shop">Synthetics &amp; Blends</a></li>
+          <li><a href="products.html#shop">Kits &amp; Bundles</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Support</a></li>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Peptides UK Hub. All Rights Reserved. Shipped from UK.</div>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <span class="boxed-icon-sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> 256-Bit SSL Encryption
+        <span class="boxed-icon-sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span> UK Domestic Shipping
+      </div>
+    </div>
+  </footer>
+
+  <!-- 8. FLOATING HELP BUTTON -->
+  <a href="contact.html" class="floating-help-btn" title="Contact Support">
+    <span class="boxed-icon-sm" style="width:28px;height:28px;background:transparent;border:none;color:white;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+  </a>
+
+  <!-- 9. CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button class="close-drawer-btn" id="close-cart-btn">&times;</button>
+      </div>
+      <div class="free-shipping-progress">
+        <p class="shipping-txt" id="shipping-status-txt">Add <strong>£299.99 GBP</strong> more for <strong>FREE Priority Shipping!</strong></p>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="shipping-bar-fill"></div>
+        </div>
+      </div>
+      <div class="cart-items-body" id="cart-items-container"></div>
+      <div class="cart-footer">
+        <div class="cart-summary-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">£0.00 GBP</span>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="alert('Proceeding to Secure UK Checkout!');">
+          <span class="boxed-icon-sm" style="margin-right:8px;background:rgba(255,255,255,0.2);border:none;color:white;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Secure Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="brand-logo">
+      <div class="logo-icon-badge">PU</div>
+      <div class="logo-text-group">
+        <span class="brand-name">PEPTIDES</span>
+        <span class="brand-name">UK HUB</span>
+      </div>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html">HOME</a>
+      <a href="products.html">SHOP</a>
+      <a href="about.html">ABOUT</a>
+      <a href="quality.html">QUALITY</a>
+      <a href="blog.html">BLOG</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Contact form submission handler
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const success = document.getElementById('form-success');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('contact-form').reset();
+        success.style.display = 'block';
+        btn.textContent = 'Send Support Request';
+        btn.disabled = false;
+        setTimeout(() => { success.style.display = 'none'; }, 6000);
+      }, 1200);
+    }
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-trigger');
+    const mobileDrawer = document.getElementById('mobile-nav-drawer');
+    const mobileOverlay = document.getElementById('mobile-drawer-overlay');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+      });
+      mobileOverlay.addEventListener('click', () => {
+        mobileDrawer.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+      });
+    }
+
+    // Cart trigger
+    const cartBtn = document.getElementById('cart-icon-trigger');
+    const cartOverlay = document.getElementById('cart-drawer-overlay');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    if (cartBtn) {
+      cartBtn.addEventListener('click', () => cartOverlay.classList.add('active'));
+      closeCartBtn.addEventListener('click', () => cartOverlay.classList.remove('active'));
+      cartOverlay.addEventListener('click', (e) => {
+        if (e.target === cartOverlay) cartOverlay.classList.remove('active');
+      });
+    }
+  </script>
+</body>
+</html>

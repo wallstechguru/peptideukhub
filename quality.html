@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Product Quality and Testing Documentation Guide | Peptides UK Hub</title>
+  <meta name="description" content="This page explains what Peptides UK Hub publishes for each catalog item, what common analytical documents mean, and where the current evidence stops.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ------------------------------------------------
+       QUALITY PAGE SPECIFIC STYLES — PEPTIDES UK HUB
+       ------------------------------------------------ */
+
+    /* Quality Hero — split card matching reference */
+    .quality-page-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: #0d1017;
+      border: 1px solid #1e2738;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      margin: 32px auto 0 auto;
+      max-width: 1380px;
+    }
+
+    .quality-page-hero-left {
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #0b0e17;
+    }
+
+    .quality-page-hero-subtitle {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: var(--color-teal-green);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .quality-page-hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.1rem, 4vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 1.4rem;
+    }
+
+    .quality-page-hero-desc {
+      font-size: clamp(0.92rem, 1.4vw, 1.05rem);
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 2.2rem;
+      max-width: 560px;
+    }
+
+    .quality-page-stats {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid #1e2638;
+      padding-top: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .qp-stat {
+      display: flex;
+      flex-direction: column;
+      padding-right: 2.5rem;
+      border-right: 1px solid #1e2638;
+      margin-right: 2.5rem;
+    }
+
+    .qp-stat:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .qp-stat-label {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .qp-stat-value {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #64748b;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .quality-page-hero-right {
+      position: relative;
+      min-height: 380px;
+    }
+
+    .quality-page-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Testing Cards Grid */
+    .quality-content-section {
+      max-width: 1380px;
+      margin: 64px auto 0 auto;
+      padding: 0 24px;
+    }
+
+    .quality-intro-block {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px auto;
+    }
+
+    .testing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testing-card {
+      background-color: #0f1219;
+      border: 1px solid #1e2638;
+      border-radius: 14px;
+      padding: 32px 28px;
+      transition: all 0.22s ease;
+    }
+
+    .testing-card:hover {
+      border-color: rgba(20, 184, 166, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .testing-card-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .testing-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .testing-card-body {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      line-height: 1.65;
+    }
+
+    /* Transparency Section */
+    .publish-section {
+      background: linear-gradient(135deg, #0b0e17 0%, #0e121e 100%);
+      border-top: 1px solid #1e2638;
+      border-bottom: 1px solid #1e2638;
+      padding: 80px 24px;
+      margin-top: 80px;
+    }
+
+    .publish-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .publish-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .publish-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid #1e2638;
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+
+    .publish-list-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .publish-list-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .publish-list-text strong {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    .publish-list-text span {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* Disclosure Notice Card */
+    .evidence-notice-card {
+      background-color: rgba(20, 184, 166, 0.04);
+      border: 1px solid rgba(20, 184, 166, 0.25);
+      border-radius: 16px;
+      padding: 36px;
+      position: relative;
+    }
+
+    .notice-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: var(--color-teal-green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .notice-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+
+    .notice-body {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .notice-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(20, 184, 166, 0.15);
+      padding-top: 20px;
+    }
+
+    .notice-list li {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .notice-list li::before {
+      content: '•';
+      color: var(--color-teal-green);
+      font-weight: bold;
+    }
+
+    /* Terms Glossary */
+    .glossary-section {
+      max-width: 1380px;
+      margin: 80px auto 0 auto;
+      padding: 0 24px;
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .glossary-item {
+      background-color: #0f1219;
+      border: 1px solid #1e2638;
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+
+    .glossary-term {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-teal-green);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .glossary-def {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    /* COA Tool Wide */
+    .coa-page-section {
+      max-width: 1380px;
+      margin: 80px auto 0 auto;
+      padding: 0 24px;
+    }
+
+    .coa-page-inner {
+      background: linear-gradient(135deg, #0f1422 0%, #0d101a 100%);
+      border: 1px solid #1e2638;
+      border-radius: 16px;
+      padding: 48px 56px;
+    }
+
+    .coa-wide-form {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .coa-wide-form .coa-input {
+      flex-grow: 1;
+      font-size: 1rem;
+      padding: 14px 18px;
+    }
+
+    @media (max-width: 1024px) {
+      .quality-page-hero {
+        grid-template-columns: 1fr;
+        margin: 16px;
+      }
+      .quality-page-hero-left {
+        padding: 36px 28px;
+      }
+      .quality-page-hero-right {
+        min-height: 280px;
+      }
+      .testing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .publish-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .glossary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .quality-page-stats {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .qp-stat {
+        border-right: none;
+        border-bottom: 1px solid #1e2638;
+        padding-right: 0;
+        margin-right: 0;
+        padding-bottom: 1.2rem;
+        margin-bottom: 0;
+      }
+      .qp-stat:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .testing-grid {
+        grid-template-columns: 1fr;
+      }
+      .coa-wide-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT TICKER BAR -->
+  <div class="announcement-bar">
+    <div class="ticker-wrapper">
+      <div class="ticker-content">
+        <div class="ticker-item">SECURE ACCOUNT CHECKOUT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">FREE PRIORITY SHIPPING £299.99+ GBP <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">MOST UK ORDERS UNDER 7 DAYS AFTER PROCESSING <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">DISCREET UK-WIDE FULFILLMENT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">100% UK RESEARCH COMPLIANT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">SECURE ACCOUNT CHECKOUT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">FREE PRIORITY SHIPPING £299.99+ GBP <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">MOST UK ORDERS UNDER 7 DAYS AFTER PROCESSING <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">DISCREET UK-WIDE FULFILLMENT <span class="ticker-dot">•</span></div>
+        <div class="ticker-item">100% UK RESEARCH COMPLIANT <span class="ticker-dot">•</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon-badge">PU</div>
+        <div class="logo-text-group">
+          <span class="brand-name">PEPTIDES</span>
+          <span class="brand-name" style="color:#ffffff;">UK HUB</span>
+          <span class="brand-subtext">RESEARCH & INNOVATION</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="products.html" class="nav-link">SHOP</a>
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="quality.html" class="nav-link active">QUALITY</a>
+        <a href="blog.html" class="nav-link">BLOG</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+
+      <div class="header-actions">
+        <form class="header-search-form" onsubmit="event.preventDefault();">
+          <input type="text" class="search-input" placeholder="Search site..." aria-label="Search site">
+          <button type="submit" class="search-btn" title="Search"><span class="boxed-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span></button>
+        </form>
+        <button class="action-icon-btn boxed-action" title="User Account">
+          <span class="boxed-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        </button>
+        <button class="action-icon-btn boxed-action" id="cart-icon-trigger" title="Shopping Cart">
+          <span class="boxed-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span><span class="cart-badge">0</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-trigger" aria-label="Toggle Mobile Menu">
+          <span class="boxed-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. QUALITY PAGE HERO -->
+  <div style="padding: 0 24px;">
+    <div class="quality-page-hero">
+      <div class="quality-page-hero-left">
+        <span class="quality-page-hero-subtitle">EVIDENCE BEFORE CLAIMS</span>
+        <h1 class="quality-page-hero-title">Research Product Quality and Testing Documentation Guide</h1>
+        <p class="quality-page-hero-desc">
+          This page explains what Peptides UK Hub publishes for each catalog item, what common analytical documents mean, and where the current evidence stops. It is an educational guide, not a claim that every item or batch has a public laboratory report.
+        </p>
+
+        <div class="quality-page-stats">
+          <div class="qp-stat">
+            <span class="qp-stat-label">Published</span>
+            <span class="qp-stat-value">CATALOG AND STORAGE DETAILS</span>
+          </div>
+          <div class="qp-stat">
+            <span class="qp-stat-label">Evidence limit</span>
+            <span class="qp-stat-value">NO PUBLIC BATCH REPORTS</span>
+          </div>
+          <div class="qp-stat">
+            <span class="qp-stat-label">Positioning</span>
+            <span class="qp-stat-value">RESEARCH USE ONLY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quality-page-hero-right">
+        <img src="quality-lab.jpg" alt="Laboratory glassware and testing equipment" class="quality-page-hero-img">
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. TESTING STANDARDS OVERVIEW -->
+  <section class="quality-content-section">
+    <div class="quality-intro-block">
+      <span class="section-header-tag">WHAT ANALYTICAL TESTING MEANS</span>
+      <h2 class="section-title">How We Verify Research Product Quality</h2>
+      <p>Every compound in the Peptides UK Hub catalog is sourced from manufacturers who conduct multi-stage analytical verification. Below is a breakdown of the core testing methodologies and what each one confirms about the research material.</p>
+    </div>
+
+    <div class="testing-grid">
+      <div class="testing-card">
+        <span class="testing-card-icon">📊</span>
+        <h3 class="testing-card-title">HPLC Purity Analysis</h3>
+        <p class="testing-card-body">High-Performance Liquid Chromatography (HPLC) separates compound components and measures the relative proportion of the target molecule. A result of 99%+ indicates that at least 99% of the detected material is the intended compound by peak area.</p>
+      </div>
+
+      <div class="testing-card">
+        <span class="testing-card-icon">⚗️</span>
+        <h3 class="testing-card-title">Mass Spectrometry (ESI-MS)</h3>
+        <p class="testing-card-body">Electrospray Ionization Mass Spectrometry confirms molecular weight and sequence identity. It verifies that the compound matches the expected molecular formula, catching substitutions, truncations, or oxidative modifications that HPLC alone cannot detect.</p>
+      </div>
+
+      <div class="testing-card">
+        <span class="testing-card-icon">🧪</span>
+        <h3 class="testing-card-title">Endotoxin Screening (LAL)</h3>
+        <p class="testing-card-body">The Limulus Amebocyte Lysate (LAL) test measures bacterial endotoxin levels in the final product. Research-grade peptides should read below 5 EU/mg to ensure they are suitable for sterile in-vitro and in-vivo experimental use.</p>
+      </div>
+
+      <div class="testing-card">
+        <span class="testing-card-icon">🔬</span>
+        <h3 class="testing-card-title">Amino Acid Analysis (AAA)</h3>
+        <p class="testing-card-body">AAA verifies the amino acid composition of a peptide by hydrolysing it and measuring the individual amino acids present. This confirms sequence completeness and is especially important for long-chain or complex peptide compounds.</p>
+      </div>
+
+      <div class="testing-card">
+        <span class="testing-card-icon">🛡️</span>
+        <h3 class="testing-card-title">Heavy Metal Screening</h3>
+        <p class="testing-card-body">ICP-MS (Inductively Coupled Plasma Mass Spectrometry) is used to screen for heavy metal contaminants including lead, arsenic, mercury, and cadmium — ensuring raw synthesis reagents did not introduce trace inorganic contamination.</p>
+      </div>
+
+      <div class="testing-card">
+        <span class="testing-card-icon">📦</span>
+        <h3 class="testing-card-title">Lyophilization & Stability</h3>
+        <p class="testing-card-body">Peptides are freeze-dried (lyophilized) under vacuum to remove water, maximizing shelf stability. Cold-chain storage at −20°C for extended periods or 2–8°C for short-term use is recommended to preserve analytical integrity throughout the research cycle.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WHAT WE PUBLISH vs. EVIDENCE LIMITS -->
+  <section class="publish-section">
+    <div class="publish-inner">
+      <div>
+        <span class="section-header-tag">TRANSPARENCY POLICY</span>
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem);">What Peptides UK Hub Publishes Per Catalog Item</h2>
+
+        <ul class="publish-list">
+          <li>
+            <div class="publish-list-icon">📋</div>
+            <div class="publish-list-text">
+              <strong>Product Identity & Common Name</strong>
+              <span>The widely accepted research name, sequence abbreviation, and primary synonyms used in literature.</span>
+            </div>
+          </li>
+          <li>
+            <div class="publish-list-icon">⚖️</div>
+            <div class="publish-list-text">
+              <strong>Listed Amount & Vial Format</strong>
+              <span>Milligram quantity per vial, lyophilized or solution format, and kit multi-vial configurations.</span>
+            </div>
+          </li>
+          <li>
+            <div class="publish-list-icon">🌡️</div>
+            <div class="publish-list-text">
+              <strong>Storage Conditions & Shelf Life</strong>
+              <span>Recommended temperature range, light sensitivity notes, and expected stability timeframe after reconstitution.</span>
+            </div>
+          </li>
+          <li>
+            <div class="publish-list-icon">💷</div>
+            <div class="publish-list-text">
+              <strong>GBP Pricing & Stock Status</strong>
+              <span>Live catalog pricing in British pounds with real-time availability and fulfillment timeline indicators.</span>
+            </div>
+          </li>
+          <li>
+            <div class="publish-list-icon">🇬🇧</div>
+            <div class="publish-list-text">
+              <strong>UK-Only Delivery Policy</strong>
+              <span>All orders are fulfilled domestically within the UK — no international shipping, no customs exposure.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="evidence-notice-card">
+          <div class="notice-label">⚠ EVIDENCE LIMIT DISCLOSURE</div>
+          <h3 class="notice-title">No Public Batch-Level Lab Reports</h3>
+          <p class="notice-body">
+            Peptides UK Hub does not currently publish individual batch Certificates of Analysis (COAs) or raw HPLC chromatograms on the public storefront. This page is an educational overview of the testing methodologies used by our supply chain — not a guarantee that every batch has a publicly accessible analytical report.
+          </p>
+          <p class="notice-body">
+            Purchasers requiring batch-specific documentation should contact support prior to ordering. We are transparent about the limits of what we publish to ensure qualified researchers can make informed procurement decisions.
+          </p>
+
+          <ul class="notice-list">
+            <li>Batch COAs are not publicly listed on individual product pages</li>
+            <li>HPLC chromatograms available upon direct request</li>
+            <li>All products are positioned as research-use-only reagents</li>
+            <li>Not for diagnostic, therapeutic, or human use</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ANALYTICAL TERMS GLOSSARY -->
+  <section class="glossary-section">
+    <div style="text-align:center; margin-bottom:3rem;">
+      <span class="section-header-tag">UNDERSTANDING YOUR DOCUMENTS</span>
+      <h2 class="section-title">Analytical Terms Glossary</h2>
+      <p style="color:#94a3b8; font-size:1rem; max-width:600px; margin:0 auto;">A plain-language reference for common terms found in peptide quality documentation and Certificates of Analysis.</p>
+    </div>
+
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <span class="glossary-term">COA</span>
+        <p class="glossary-def">Certificate of Analysis — a document issued by a testing laboratory that summarises analytical results for a specific product lot, including purity percentage, mass confirmation, and endotoxin levels.</p>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">HPLC</span>
+        <p class="glossary-def">High-Performance Liquid Chromatography — separates molecules in a sample based on polarity. Purity is reported as percentage of the target peak area relative to all detected peaks.</p>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">MS / ESI-MS</span>
+        <p class="glossary-def">Mass Spectrometry — confirms the molecular weight of a compound to verify identity. ESI (Electrospray Ionization) is the most common soft ionization method used for peptides.</p>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">m/z</span>
+        <p class="glossary-def">Mass-to-charge ratio — the unit used in mass spectrometry. The observed m/z value is compared against the theoretical value calculated from the compound's molecular formula.</p>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">EU/mg</span>
+        <p class="glossary-def">Endotoxin Units per milligram — the measurement unit for bacterial endotoxin contamination. Lower is better; research-grade peptides typically target &lt;5 EU/mg.</p>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">Lyophilized</span>
+        <p class="glossary-def">Freeze-dried — a preservation process that removes water under vacuum while the material is frozen, producing a stable powder that can be stored long-term without refrigeration.</p>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">TFA Salt</span>
+        <p class="glossary-def">Trifluoroacetate salt form — the default counter-ion form of most synthesized peptides. Some experiments require acetate form instead; this can usually be requested from the manufacturer.</p>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">Reconstitution</span>
+        <p class="glossary-def">The process of dissolving a lyophilized peptide powder in a suitable solvent (often sterile water, bacteriostatic water, or dilute acetic acid) to produce a research solution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. BATCH COA LOOKUP TOOL -->
+  <section class="coa-page-section" id="coa-lookup">
+    <div class="coa-page-inner">
+      <span class="section-header-tag">BATCH VERIFICATION TOOL</span>
+      <h2 class="section-title">Verify Your Lot Number</h2>
+      <p class="coa-desc" style="color:#94a3b8; font-size:0.95rem; line-height:1.6; margin-bottom:28px;">
+        Enter the lot number printed on your vial label or outer packaging to retrieve the analytical summary on record for that specific batch.
+      </p>
+
+      <form class="coa-wide-form" id="coa-form">
+        <input type="text" id="coa-lot-input" class="coa-input" placeholder="e.g. PUK-2026-BPC99" required>
+        <button type="submit" class="btn-primary" style="padding:14px 28px; white-space:nowrap;">Verify Lot</button>
+      </form>
+
+      <div class="coa-result-box" id="coa-result-box"></div>
+    </div>
+  </section>
+
+  <!-- 8. FOOTER -->
+  <footer class="main-footer">
+    <div class="disclaimer-banner">
+      <strong>RESEARCH COMPLIANCE NOTICE:</strong> All products sold by Peptides UK Hub are for in-vitro laboratory research only. Not for human or animal consumption. Not for diagnostic or therapeutic use. Purchasers must confirm age of majority and research-use eligibility.
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="logo-icon-badge">PU</div>
+          <div class="logo-text-group">
+            <span class="brand-name">PEPTIDES</span>
+            <span class="brand-name" style="color:#ffffff;">UK HUB</span>
+          </div>
+        </a>
+        <p>The UK's premier supplier of high-purity laboratory research peptides, synthetic fragments, and analytical reagents. Domestic fulfillment only.</p>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop Catalog</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="quality.html">Quality & Testing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Research Categories</h4>
+        <ul class="footer-links">
+          <li><a href="products.html#shop">Healing & Recovery</a></li>
+          <li><a href="products.html#shop">Metabolic Research</a></li>
+          <li><a href="products.html#shop">Synthetics & Blends</a></li>
+          <li><a href="products.html#shop">Kits & Bundles</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Support</a></li>
+          <li><a href="blog.html">Research Hub</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Peptides UK Hub. All Rights Reserved. Shipped from UK.</div>
+      <div style="display:flex;gap:1rem;align-items:center;">
+        <span class="boxed-icon-sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> 256-Bit SSL Encryption
+        <span class="boxed-icon-sm"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span> UK Domestic Shipping
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING HELP BUTTON -->
+  <a href="contact.html" class="floating-help-btn" title="Contact Support">
+    <span class="boxed-icon-sm" style="width:28px;height:28px;background:transparent;border:none;color:white;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+  </a>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button class="close-drawer-btn" id="close-cart-btn">&times;</button>
+      </div>
+      <div class="free-shipping-progress">
+        <p class="shipping-txt" id="shipping-status-txt">Add <strong>£299.99 GBP</strong> more for <strong>FREE Priority Shipping!</strong></p>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="shipping-bar-fill"></div>
+        </div>
+      </div>
+      <div class="cart-items-body" id="cart-items-container"></div>
+      <div class="cart-footer">
+        <div class="cart-summary-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">£0.00 GBP</span>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="alert('Proceeding to Secure UK Checkout!');">
+          <span class="boxed-icon-sm" style="margin-right:8px;background:rgba(255,255,255,0.2);border:none;color:white;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Secure Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE NAV DRAWER -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="brand-logo">
+      <div class="logo-icon-badge">PU</div>
+      <div class="logo-text-group">
+        <span class="brand-name">PEPTIDES</span>
+        <span class="brand-name">UK HUB</span>
+      </div>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html">HOME</a>
+      <a href="products.html">SHOP</a>
+      <a href="about.html">ABOUT</a>
+      <a href="quality.html">QUALITY</a>
+      <a href="blog.html">BLOG</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
