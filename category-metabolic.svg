@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <radialGradient id="glowMetabolic" cx="50%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="liquidMetabolic" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <linearGradient id="glassMetabolic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="150" cy="150" r="120" fill="url(#glowMetabolic)"/>
+
+  <!-- faint molecule motif -->
+  <g stroke="#3B82F6" stroke-opacity="0.25" stroke-width="2" fill="none">
+    <line x1="60" y1="80" x2="90" y2="60"/>
+    <line x1="90" y1="60" x2="120" y2="75"/>
+    <circle cx="60" cy="80" r="5" fill="#3B82F6" fill-opacity="0.3" stroke="none"/>
+    <circle cx="90" cy="60" r="5" fill="#3B82F6" fill-opacity="0.3" stroke="none"/>
+    <circle cx="120" cy="75" r="5" fill="#3B82F6" fill-opacity="0.3" stroke="none"/>
+  </g>
+
+  <!-- Rubber stopper -->
+  <rect x="122" y="58" width="56" height="30" rx="6" fill="#334155"/>
+  <rect x="122" y="80" width="56" height="10" fill="#1f2937"/>
+
+  <!-- Metal crimp band -->
+  <rect x="116" y="88" width="68" height="10" rx="2" fill="#94a3b8"/>
+
+  <!-- Vial body -->
+  <rect x="108" y="98" width="84" height="152" rx="16" fill="url(#glassMetabolic)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+
+  <!-- Liquid fill -->
+  <path d="M112 158 h76 v76 a14 14 0 0 1 -14 14 h-48 a14 14 0 0 1 -14 -14 z" fill="url(#liquidMetabolic)"/>
+
+  <!-- Glass highlight -->
+  <rect x="120" y="108" width="10" height="130" rx="5" fill="#ffffff" opacity="0.12"/>
+
+  <!-- Label band -->
+  <rect x="108" y="176" width="84" height="26" fill="#0d0f17" opacity="0.35"/>
+  <text x="150" y="193" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" font-weight="800" letter-spacing="1.5" fill="#eff6ff">METABOLIC</text>
+</svg>

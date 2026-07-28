@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout | Peptides UK Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon-badge">PU</div>
+        <div class="logo-text-group">
+          <span class="brand-name">PEPTIDES</span>
+          <span class="brand-name" style="color: #ffffff;">UK HUB</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="products.html" class="nav-link">SHOP</a>
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="quality.html" class="nav-link">QUALITY</a>
+        <a href="blog.html" class="nav-link">BLOG</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">CONTACT</a>
+      </nav>
+      
+      <div class="header-actions">
+        <form class="header-search-form" onsubmit="event.preventDefault();">
+          <input type="text" class="search-input" placeholder="Search site..." aria-label="Search site">
+          <button type="submit" class="search-btn"><span class="boxed-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span></button>
+        </form>
+        <button class="action-icon-btn boxed-action"><span class="boxed-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span></button>
+        <button class="action-icon-btn boxed-action" id="cart-icon-trigger">
+          <span class="boxed-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></span>
+          <span class="cart-badge">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CHECKOUT HERO SECTION -->
+  <section class="checkout-hero-section">
+    <div class="checkout-container">
+      <span class="checkout-subtitle">SECURE CHECKOUT</span>
+      <h1 class="checkout-title">Complete your order</h1>
+      <p class="checkout-desc">Review the cart, confirm delivery details, choose a payment method, and follow the instructions generated for your order.</p>
+
+      <div class="checkout-steps">
+        <div class="checkout-step active">
+          <span class="step-num">1</span>
+          <span class="step-text">Delivery details</span>
+        </div>
+        <div class="checkout-step">
+          <span class="step-num">2</span>
+          <span class="step-text">Account check</span>
+        </div>
+        <div class="checkout-step">
+          <span class="step-num">3</span>
+          <span class="step-text">Payment choice</span>
+        </div>
+        <div class="checkout-step">
+          <span class="step-num">4</span>
+          <span class="step-text">Payment instructions</span>
+        </div>
+      </div>
+
+      <div class="checkout-info-boxes">
+        <div class="info-box">
+          <h4>Order saved</h4>
+          <p>Your cart and entered details remain available while signing in.</p>
+        </div>
+        <div class="info-box">
+          <h4>Instructions by email</h4>
+          <p>Payment details are also displayed immediately after reservation.</p>
+        </div>
+        <div class="info-box">
+          <h4>Research use only</h4>
+          <p>Products are not for human or animal use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CHECKOUT CONTENT -->
+  <main class="checkout-main">
+    <div class="checkout-layout">
+      <!-- LEFT COLUMN -->
+      <div class="checkout-left">
+        <!-- Guest Checkout Banner -->
+        <div class="guest-checkout-banner">
+          <span class="guest-subtitle">GUEST CHECKOUT</span>
+          <h3>Continuing as guest</h3>
+          <p>Payment instructions, order updates, and tracking will be sent to the email in your delivery details.</p>
+          <p>Prefer an account? Sign in any time before reserving the order.</p>
+        </div>
+        
+        <div class="guest-success-msg">
+          Guest checkout enabled. Payment instructions and order updates will go to the email in your delivery details.
+        </div>
+        
+        <div class="step-header-row">
+          <span class="step-label">STEP 1</span>
+          <a href="#" class="how-to-pay-link">How to pay</a>
+        </div>
+        
+        <h2 class="shipping-details-title">SHIPPING DETAILS</h2>
+        
+        <form id="checkout-form" class="shipping-form" action="https://formsubmit.co/support@peptidesukhub.co.uk" method="POST">
+          <input type="hidden" name="_subject" value="New Order Placed!">
+          <input type="hidden" name="cart_details" id="cart_details_input" value="BPC-157 10 mg (1 vial x 1)">
+          
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label>First name</label>
+              <input type="text" name="first_name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label>Last name</label>
+              <input type="text" name="last_name" class="form-input" required>
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label>Phone number</label>
+              <input type="tel" name="phone" class="form-input" required>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <!-- RIGHT COLUMN (CART REVIEW) -->
+      <div class="checkout-right">
+        <div class="cart-review-card">
+          <div class="cart-review-header">
+            <h3>REVIEW YOUR CART</h3>
+            <a href="#" class="edit-cart-link">Edit cart</a>
+          </div>
+          
+          <div class="cart-item-row">
+            <div class="cart-item-info">
+              <h4>BPC-157 10 mg</h4>
+              <p>1 vial x 1</p>
+            </div>
+            <div class="cart-item-price">
+              £49.99
+            </div>
+          </div>
+          
+          <div class="discount-code-section">
+            <label>DISCOUNT CODE</label>
+            <div class="discount-input-group">
+              <input type="text" placeholder="PROMO CODE" class="promo-input">
+              <button class="btn-primary apply-btn">APPLY</button>
+            </div>
+            <p class="promo-help">Enter a promo code before reserving your order.</p>
+          </div>
+          
+          <div class="summary-rows">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong>£49.99 GBP</strong>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <strong>£19.99 GBP</strong>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total due</span>
+              <strong>£69.98 GBP</strong>
+            </div>
+          </div>
+          
+          <button type="submit" form="checkout-form" class="btn-primary place-order-btn">PLACE ORDER</button>
+          
+          <p class="shipping-notice">
+            Total due includes the shipping line shown above. Standard shipping is £19.99 GBP below £299.99 GBP; qualifying orders show shipping as free. No separate handling fee is added at checkout.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
